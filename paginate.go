@@ -258,6 +258,7 @@ type result[T any] struct {
 // start begins a request for page number page. The goroutine sends its result into a buffered
 // channel, so it never blocks when nobody waits for it anymore.
 func (p *pager[T]) start(cursor string, page int) *call[T] {
+	//nolint:gosec // G118: cancel is kept on the call and invoked by the consumer (see collect)
 	pctx, cancel := context.WithTimeout(p.total, p.timeout)
 	c := &call[T]{page: page, ctx: pctx, cancel: cancel, result: make(chan result[T], 1)}
 	go func() {
