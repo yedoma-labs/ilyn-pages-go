@@ -1,4 +1,8 @@
 # ilyn-pages-go
+<picture>
+  <source media="(max-width: 640px)" srcset="https://raw.githubusercontent.com/yedoma-labs/assets/main/resized/banner-resized-mobile.png">
+  <img src="https://raw.githubusercontent.com/yedoma-labs/assets/main/resized/banner-resized.png" alt="Project Header">
+</picture>
 
 Iterate over every page of a paginated API with a Go 1.23 iterator, and stop safely when the
 server misbehaves. The library has no dependencies outside the standard library.
